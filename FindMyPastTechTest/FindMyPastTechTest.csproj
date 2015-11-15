@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\PrimeNumberListGenerator.cs" />
+    <Compile Include="Controllers\GeneratorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -123,6 +124,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\Script\jquery-1.10.2.js" />
+    <Content Include="Content\Script\TableGenerationAndCalculation.js" />
     <Content Include="Content\Style\PageStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
