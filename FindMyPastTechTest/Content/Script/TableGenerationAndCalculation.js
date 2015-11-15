@@ -1,17 +1,5 @@
 ﻿function GenerateNumbers() {
     var number = $('#NumberBox').val();
-    
-    //$.ajax({
-    //    type: "GET",
-    //    url: "http://localhost:5050/Generator/GenerateListOfNumbers",
-    //    data: {'NumberRequired': number},
-    //    success: function (data) {
-    //        alert("stuff back :" + data[0])
-    //    },
-    //    error: function (jqXHR, textStatus) {
-    //        alert("there has been an error :" + textStatus)
-    //    }
-    //});
 
     $.ajax({
         type: "POST",
@@ -20,12 +8,43 @@
         dataType: "json"
     })
     .done(function (data) {
-    var list = data;
-    $.each(list, function (index, item) {
-        alert(item);
+        var list = data;
+        $('#DisplayTable').empty();
+
+        GenerateFirstLine(list);
+        
+        $.each(list, function (index, item) {
+            GenerateAdditionalLines(item, list)
         });
-    })
+
+        })
     .fail(function (xhr) {
         alert(xhr.responseText);
-    });
+        });
 };
+
+
+function GenerateFirstLine(list) {
+    var content = "<tr>"
+    content += '<td></td>';
+    $.each(list, function (index, item) {
+        content += '<td>' + item + '</td>';
+    });
+    content += "</tr>"
+
+    $('#DisplayTable').append(content);
+};
+
+
+function GenerateAdditionalLines(passedItem, list) {
+    var content = "<tr>"
+    content += '<td>' + passedItem + '</td>';
+
+    $.each(list, function (index, item) {
+        var result = passedItem * item;
+        content += '<td>' + result + '</td>';
+    });
+
+    content += "</tr>"
+    $('#DisplayTable').append(content);
+}
