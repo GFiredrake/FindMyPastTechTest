@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: grey;
+    background-color: #d3d3d3;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -16,10 +16,7 @@ td {
    width: 20px;
 }
 
-td:nth-child(1) {  
-  background-color: red;
-}
-
-tr:nth-child(1) {  
-  background-color: red;
+td:nth-child(1), tr:nth-child(1) {  
+  background-color: #b20000;
+  color: #d3d3d3;
 }

@@ -19,7 +19,7 @@
 
         })
     .fail(function (xhr) {
-        alert(xhr.responseText);
+        alert("an error has occured, have you entered a number? if this problem persists please seak technical support");
         });
 };
 
